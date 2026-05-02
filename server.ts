@@ -97,6 +97,9 @@ async function runFaucetTransactions(jobId: string, recipient: string) {
         job.transactions[i].hash = tx.hash;
         await tx.wait();
         job.transactions[i].status = 'success';
+
+        // Brief delay between transactions to avoid nonce issues or rate limits
+        if (i < 9) await new Promise(resolve => setTimeout(resolve, 1000));
       } catch (error: any) {
         console.error(`Transaction ${i} failed:`, error);
         job.transactions[i].status = 'failed';
