@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-usdc: #2775CA;
+  --color-usdc-dark: #1B5A9D;
+  --color-surface: #0D0D0D;
+  --color-border-accent: rgba(255,255,255,0.1);
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .border-accent {
+    @apply border border-[rgba(255,255,255,0.1)];
+  }
+
+  .btn-gradient {
+    @apply bg-linear-to-r from-usdc to-usdc-dark text-white font-black uppercase tracking-widest transition-all duration-300;
+    @apply hover:brightness-110 active:scale-[0.98];
+  }
+
+  .card-3xl {
+    @apply bg-surface border border-[rgba(255,255,255,0.1)] rounded-3xl p-10;
+  }
+}

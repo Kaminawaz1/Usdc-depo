@@ -1,0 +1,6 @@
+{
+  "name": "USDC DEPO",
+  "description": "Automated USDC faucet tool for executing multiple transactions in one click.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
